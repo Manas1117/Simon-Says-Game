@@ -1,31 +1,159 @@
-body{
-    text-align: center;
+:root {
+  --red: #e74c3c;
+  --green: #2ecc71;
+  --blue: #3498db;
+  --yellow: #f1c40f;
+  --dark: #2c3e50;
+  --light: #ecf0f1;
 }
 
-.btn{
-    height: 200px;
-    width: 200px;
-    border-radius: 20%;
-    border: 10px black solid;
-    margin: 2.5rem;
-}
-.btn-container{
-    display: flex;
-    justify-content: center;
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #dfeeea;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease;
 }
 
-.r{
-    background-color: red;
+h1 {
+  font-size: 2.5rem;
+  color: var(--dark);
+  margin-top: 40px;
 }
-.y{
-    background-color: yellow;
+
+h2 {
+  font-size: 1.2rem;
+  margin: 20px 0 40px;
+  color: #444;
 }
-.g{
-    background-color: green;
+
+.btn-container {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
 }
-.p{
-    background-color: purple;
+
+/* Button Styles */
+.btn {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
 }
-.flash{
-    background-color: white;
+
+/* Color Mapping */
+.r {
+  background-color: var(--red);
+}
+.g {
+  background-color: var(--green);
+}
+.p {
+  background-color: var(--blue);
+}
+.y {
+  background-color: var(--yellow);
+  color: #000;
+}
+
+/* Hover Effect */
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Flash Animation */
+.flash {
+  animation: flash 0.2s;
+}
+
+@keyframes flash {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Game Over Effect */
+body.game-over {
+  background-color: #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .btn-container {
+    grid-template-columns: repeat(2, 100px);
+    gap: 20px;
+  }
+
+  .btn {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* New wrapper to hold both instructions + buttons */
+.game-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+/* Instructions Box Styling */
+.instructions-box {
+  max-width: 240px;
+  background: linear-gradient(to bottom right, #f9f9f9, #e1eec3);
+  border-left: 5px solid var(--dark);
+  border-radius: 12px;
+  padding: 20px 25px;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--dark);
+}
+
+.instructions-box h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #1c2833;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.instructions-box ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 10px 0 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

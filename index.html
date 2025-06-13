@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon sats Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Simon says Game</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simon Says Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Simon Says Game</h1>
     <h2>Press any key to start the Game</h2>
 
-    <div class="btn-container">
-        <div class="line1">
-            <div class="btn r" type="button" id="r">1</div>
-            <div class="btn y" type="button" id="y">2</div>
-        </div>
-        <div class="line2">
-            <div class="btn g" type="button" id="g">3</div>
-            <div class="btn p" type="button" id="p">4</div>
-        </div>
+    <div class="game-layout">
+      <div class="instructions-box" id="instructions">
+        <h3>How to Play</h3>
+        <ul>
+          <li>Watch the color pattern</li>
+          <li>Click the buttons in the same order</li>
+          <li>Each level adds a new color</li>
+          <li>If wrong, game restarts</li>
+        </ul>
+      </div>
+
+      <div class="btn-container">
+        <div class="btn r" id="r"></div>
+        <div class="btn y" id="y"></div>
+        <div class="btn g" id="g"></div>
+        <div class="btn p" id="p"></div>
+      </div>
     </div>
-    
-    <script src="app.js"></script>
-</body>
+
+    <script src="script.js"></script>
+  </body>
 </html>
