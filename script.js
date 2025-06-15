@@ -4,7 +4,9 @@ let btns = ["r", "y", "g", "p"];
 
 let started = false;
 let level = 0;
+let high = 0;
 let h2 = document.querySelector("h2");
+let h3 = document.querySelector("h3");
 
 let instructionsBox = document.getElementById("instructions");
 
@@ -78,5 +80,16 @@ function reset() {
   started = false;
   gameSeq = [];
   userSeq = [];
+
+  highScore(level);
   level = 0;
+}
+
+function highScore(level) {
+  if (high > level) {
+    h3.innerHTML = `High Score : ${high}`;
+  } else {
+    high = level;
+    h3.innerHTML = `High Score : ${high}`;
+  }
 }
