@@ -157,3 +157,44 @@ body.game-over {
     transform: translateY(0);
   }
 }
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin: 15px 0 30px;
+  }
+
+  .btn-container {
+    grid-template-columns: repeat(2, 100px);
+    gap: 20px;
+  }
+
+  .btn {
+    width: 100px;
+    height: 100px;
+    font-size: 1rem;
+  }
+
+  .game-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  .instructions-box {
+    width: 100%;
+    max-width: 320px;
+    font-size: 0.9rem;
+    padding: 15px 20px;
+  }
+
+  .instructions-box h3 {
+    font-size: 1rem;
+  }
+}
